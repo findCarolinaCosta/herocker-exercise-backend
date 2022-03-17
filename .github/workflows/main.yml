@@ -5,10 +5,10 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Verifica o repositório do Git
-        uses: actions/checkout@v2
+      - uses: actions/checkout@v1
 
       - name: executando o lint para verificar se a erros
-        run: npx eslint .
+      - uses: stefanoeb/eslint-action@1.0.2
 
       - name: Run Tests
         run: |
