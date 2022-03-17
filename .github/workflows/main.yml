@@ -1,17 +1,18 @@
-on: [push, pull_request]
+name: Unit Tests
+
+on:
+  push:
+    branches:
+      - master
+  pull_request:
+    branches: [master]
 
 jobs:
-  eslint:
+  Jest:
     runs-on: ubuntu-latest
     steps:
-      - name: Verifica o repositório do Git
       - uses: actions/checkout@v1
-
-      - name: executando o lint para verificar se a erros
-      - uses: stefanoeb/eslint-action@1.0.2
-
       - name: Run Tests
         run: |
-          npm lint
           npm install 
           npm test
