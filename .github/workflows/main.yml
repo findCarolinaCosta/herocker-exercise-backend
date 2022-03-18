@@ -20,4 +20,5 @@ jobs:
           run: npx eslint .
 
         - name: executando o test para verificar se a erros
-          run: npx test
+          run: | 
+            npm test
